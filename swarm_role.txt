@@ -1,0 +1,132 @@
+============================================================
+                GSwarm – QUICK START GUIDE
+============================================================
+
+📌 Overview:
+GSwarm is a Telegram-based monitoring tool for the Gensyn network.
+This guide walks you through setup in simple steps.
+
+------------------------------------------------------------
+STEP 1: ✅ Prerequisites
+------------------------------------------------------------
+- Go version **1.24+**
+- Telegram account
+- Telegram **Bot Token**
+- Your **Chat ID**
+- Ethereum EOA address (from Gensyn dashboard)
+
+------------------------------------------------------------
+STEP 2: ⬇️ Install GSwarm
+------------------------------------------------------------
+
+Option A (Recommended):
+Run this in terminal:
+> go install github.com/Deep-Commit/gswarm/cmd/gswarm@latest
+
+Option B (Build from source):
+> git clone https://github.com/Deep-Commit/gswarm.git  
+> cd gswarm  
+> make build  
+> make install
+
+------------------------------------------------------------
+STEP 3: 🛠️ Add to PATH (if needed)
+------------------------------------------------------------
+Check Go bin path:
+> go env GOPATH
+
+Then add this to your shell:
+
+Linux/macOS (bash/zsh):
+> export PATH=$PATH:$(go env GOPATH)/bin
+
+Windows (PowerShell):
+> $env:PATH += ";$(go env GOPATH)\bin"
+
+------------------------------------------------------------
+STEP 4: 🔍 Verify Installation
+------------------------------------------------------------
+> gswarm --version  
+(You should see version info like: `gswarm version 1.0.x`)
+
+------------------------------------------------------------
+STEP 5: 🚀 Run GSwarm for First Time
+------------------------------------------------------------
+Start the setup process:
+> gswarm
+
+You’ll be prompted to enter:
+  - Telegram Bot Token  
+  - Chat ID  
+  - Your Ethereum EOA address (for monitoring)
+
+GSwarm will then start monitoring and sending alerts via Telegram.
+
+------------------------------------------------------------
+STEP 6: 🤖 Create Your Telegram Bot
+------------------------------------------------------------
+1. Open Telegram and message **@BotFather**
+2. Send command:
+> /newbot
+3. Follow instructions and save the **bot token**
+
+------------------------------------------------------------
+STEP 7: 📬 Get Your Chat ID
+------------------------------------------------------------
+1. Send a message to your new bot
+2. Open your browser:
+> https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates
+
+3. Find your `chat.id` in the JSON response
+
+------------------------------------------------------------
+STEP 8: ⚙️ Configuration Options
+------------------------------------------------------------
+
+Run with flags:
+> gswarm --telegram-config-path=custom_config.json  
+> gswarm --update-telegram-config=true
+
+Or set environment variables:
+> export GSWARM_TELEGRAM_CONFIG_PATH=custom_config.json  
+> export GSWARM_UPDATE_TELEGRAM_CONFIG=true
+
+------------------------------------------------------------
+STEP 9: 📈 Monitoring Behavior
+------------------------------------------------------------
+What gets monitored:
+  - Vote activity  
+  - Validator rewards  
+  - ETH balance  
+  - Peer IDs
+
+Notifications are only sent when something changes.
+
+------------------------------------------------------------
+STEP 10: 🧰 Troubleshooting
+------------------------------------------------------------
+- ❌ `gswarm: command not found` → Check Go version and PATH
+- ❌ Invalid Telegram bot token → Create new token with @BotFather
+- ❌ Chat ID not working → Ensure bot received a message first
+- ❌ Missing peer data → Check EOA address on Gensyn dashboard
+
+------------------------------------------------------------
+STEP 11: 💡 Optional - Advanced Usage
+------------------------------------------------------------
+- Setup with **Docker**
+- Use **systemd** or cron for auto-start
+- Enable **debug logging**
+(See full docs at: https://gswarm.dev/docs/advanced)
+
+------------------------------------------------------------
+STEP 12: 🙌 Support the Project
+------------------------------------------------------------
+- Donate ETH:  
+> 0xA22e20BA3336f5Bd6eCE959F5ac4083C9693e316
+
+- Contribute code or report issues:  
+> https://github.com/Deep-Commit/gswarm
+
+============================================================
+🎉 Done! You're now set up to monitor Gensyn with GSwarm.
+============================================================
