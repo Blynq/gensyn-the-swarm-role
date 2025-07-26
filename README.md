@@ -8,4 +8,5 @@
 ## 🛠️ Installation
 ### Option A (Go install):
 ```bash
-go install github.com/Deep-Commit/gswarm/cmd/gswarm@latest
+sudo apt update
+sudo apt install golang-go
