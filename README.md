@@ -1,7 +1,4 @@
-# gensyn-the-swarm-role
-gensyn the swarm role
-
-# GSwarm – Quick Start Guide 🚀
+# Gensyn-The-Swarm-Role Guide 🚀
 
 ## 📦 Prerequisites
 - Go version **1.24+**
